@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Productivity Assistant</title>
+  <style>
+    body { font-family: Arial; margin: 0; display: flex; background: #f5f5f5; }
+ .sidebar { width: 220px; background: #1e293b; color: white; padding: 20px; height: 100vh; }
+ .sidebar h2 { font-size: 18px; margin-bottom: 20px; }
+ .sidebar button { display: block; width: 100%; padding: 12px; margin: 10px 0; background: #334155; color: white; border: none; cursor: pointer; border-radius: 8px; text-align: left; }
+ .sidebar button:hover { background: #475569; }
+ .main { flex: 1; padding: 30px; }
+ .card { background: white; padding: 25px; margin: 15px 0; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+ .disclaimer { color: gray; font-size: 12px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>AI Assistant</h2>
+    <button onclick="show('email')">1. Email Generator</button>
+    <button onclick="show('meeting')">2. Meeting Summarizer</button>
+    <button onclick="show('task')">3. Task Planner</button>
+    <button onclick="show('research')">4. Research Assistant</button>
+    <button onclick="show('chatbot')">5. AI Chatbot</button>
+  </div>
+
+  <div class="main">
+    <h1>AI-Powered Productivity Assistant</h1>
+    <div id="content" class="card">
+      <p>Click a feature in the sidebar to see an example with structured prompt.</p>
+    </div>
+    <p class="disclaimer">Disclaimer: AI-generated content may require human review</p>
+  </div>
+
+<script>
+function show(feature) {
+  const data = {
+    email: "<h3>1. Smart Email Generator</h3><p><b>Prompt:</b> Draft a professional email to my manager requesting leave. Tone: Polite, Formal. Audience: Manager</p><p><b>AI Output:</b> Dear [Manager Name],<br>I would like to formally request leave on [date] due to [reason].</p>",
+    meeting: "<h3>2. Meeting Notes Summarizer</h3><p><b>Prompt:</b> Summarize this meeting transcript into key points, actions, and deadlines</p><p><b>AI Output:</b> Key Points: Project deadline Friday. Actions: Entle to submit repo. Deadline: 11:00 AM Friday</p>",
+    task: "<h3>3. AI Task Planner</h3><p><b>Prompt:</b> Plan my week for AI Skills project. Prioritize tasks and suggest schedule</p><p><b>AI Output:</b> Mon: Create GitHub repo. Tue: Add prompts. Priority: High → Repo first</p>",
+    research: "<h3>4. AI Research Assistant</h3><p><b>Prompt:</b> Research AI tools for workplace productivity. Provide insights and summary</p><p><b>AI Output:</b> Insight: AI automates email, meetings, tasks. Summary: Saves 5+ hours/week</p>",
+    chatbot: "<h3>5. AI Chatbot Interface</h3><p><b>Prompt:</b> Act as IT support. How do I reset my password?</p><p><b>AI Output:</b> To reset your password: 1. Go to Settings 2. Click 'Forgot Password' 3. Follow email link</p>"
+  };
+  document.getElementById('content').innerHTML = data[feature];
+}
+</script>
+</body>
+</html>
